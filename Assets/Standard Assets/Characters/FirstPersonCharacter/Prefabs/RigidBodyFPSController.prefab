@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: 5400000}
   - component: {fileID: 13600000}
   - component: {fileID: 11400004}
+  - component: {fileID: 978329533}
   m_Layer: 0
   m_Name: RigidBodyFPSController
   m_TagString: Untagged
@@ -301,6 +302,19 @@ MonoBehaviour:
     slowDownRate: 20
     airControl: 0
     shellOffset: 0
+--- !u!114 &978329533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32d55a09b0981d445bdcaeb05024e8f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoints: 100
 --- !u!1 &510468537
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,6 +362,8 @@ MonoBehaviour:
   muzzleFlash: {fileID: 7774323701688749239}
   range: 100
   damage: 30
+  hitEffect: {fileID: 2320718123412734030, guid: 2763972faf253cd4daf0b66a70fa33ef,
+    type: 3}
 --- !u!1001 &1372270393984411780
 PrefabInstance:
   m_ObjectHideFlags: 0

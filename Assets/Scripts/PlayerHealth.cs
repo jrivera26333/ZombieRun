@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] float hitPoints = 100f;
 
@@ -12,7 +12,7 @@ public class EnemyHealth : MonoBehaviour
         hitPoints -= damageTaken;
         if (hitPoints <= 0)
         {
-            Destroy(gameObject);
+            GetComponent<DeathHandler>().HandleDeath();
         }
     }
 }
