@@ -183,6 +183,7 @@ GameObject:
   - component: {fileID: 978329533}
   - component: {fileID: 978329534}
   - component: {fileID: 1915028634961950955}
+  - component: {fileID: 6238895168490618187}
   m_Layer: 0
   m_Name: RigidBodyFPSController
   m_TagString: Untagged
@@ -342,9 +343,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56d5298e7beb09341af8892c376f9aa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 0}
+  playerCamera: {fileID: 2000000}
   zoomIn: 20
   zoomOut: 60
+  zoomOutSensitivity: 2
+  zoomInSensitivity: 0.5
+--- !u!114 &6238895168490618187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cc903b075de02b42b010cbebfe18056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoAmount: 10
 --- !u!1 &510468537
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,6 +406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FPCamera: {fileID: 2000000}
   muzzleFlash: {fileID: 7774323701688749239}
+  ammoSlot: {fileID: 6238895168490618187}
   range: 100
   damage: 30
   hitEffect: {fileID: 2320718123412734030, guid: 2763972faf253cd4daf0b66a70fa33ef,

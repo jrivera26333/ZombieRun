@@ -7,6 +7,7 @@ public class Weapon : MonoBehaviour
 {
     [SerializeField] Camera FPCamera; //We want the camera since that is the center of the screen
     [SerializeField] ParticleSystem muzzleFlash;
+    [SerializeField] Ammo ammoSlot;
     [SerializeField] float range = 100;
     [SerializeField] float damage = 30f;
 
@@ -22,8 +23,12 @@ public class Weapon : MonoBehaviour
 
     private void Shoot()
     {
-        PlayMuzzleFlash();
-        ProcessRayCast();
+        if (ammoSlot.GetCurrentAmmo() > 0)
+        {
+            PlayMuzzleFlash();
+            ProcessRayCast();
+            ammoSlot.ReduceCurrentAmmo();
+        }
     }
 
     private void PlayMuzzleFlash()
