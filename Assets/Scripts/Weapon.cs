@@ -8,27 +8,39 @@ public class Weapon : MonoBehaviour
     [SerializeField] Camera FPCamera; //We want the camera since that is the center of the screen
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] Ammo ammoSlot;
+    [SerializeField] AmmoType ammoType;
     [SerializeField] float range = 100;
     [SerializeField] float damage = 30f;
+    [SerializeField] float timeBetweenShots = .5f;
 
     public GameObject hitEffect;
+    bool canShoot = true;
+
+    private void OnEnable()
+    {
+        canShoot = true;
+    }
 
     private void Update()
     {
-        if(Input.GetButtonDown("Fire"))
+        if (Input.GetMouseButtonDown(0) && canShoot)
         {
-            Shoot();
+            StartCoroutine(Shoot());
         }
     }
 
-    private void Shoot()
+    IEnumerator Shoot()
     {
-        if (ammoSlot.GetCurrentAmmo() > 0)
+        canShoot = false;
+        if (ammoSlot.GetCurrentAmmo(ammoType) > 0)
         {
             PlayMuzzleFlash();
             ProcessRayCast();
-            ammoSlot.ReduceCurrentAmmo();
+            ammoSlot.ReduceCurrentAmmo(ammoType);
         }
+
+        yield return new WaitForSeconds(timeBetweenShots);
+        canShoot = true;
     }
 
     private void PlayMuzzleFlash()

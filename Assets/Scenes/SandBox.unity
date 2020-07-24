@@ -1987,6 +1987,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6356592239161974718, guid: 57ef5f2d7f090f14487a4dcdeee0db33,
+        type: 3}
+      propertyPath: timeBetweenShots
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7996981133425829629, guid: 57ef5f2d7f090f14487a4dcdeee0db33,
         type: 3}
       propertyPath: gameOverCanvas
@@ -2054,6 +2059,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57ef5f2d7f090f14487a4dcdeee0db33, type: 3}
+--- !u!20 &7996981134581347157 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7996981133857684931, guid: 57ef5f2d7f090f14487a4dcdeee0db33,
+    type: 3}
+  m_PrefabInstance: {fileID: 7996981134581347156}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7996981134581347158 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6746189721257691713, guid: 57ef5f2d7f090f14487a4dcdeee0db33,
+    type: 3}
+  m_PrefabInstance: {fileID: 7996981134581347156}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7996981134581347159 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7996981133867026951, guid: 57ef5f2d7f090f14487a4dcdeee0db33,
+    type: 3}
+  m_PrefabInstance: {fileID: 7996981134581347156}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81c9795a96c094f4cbde4d65546aa9b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7996981134581347160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7996981134581347158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d5298e7beb09341af8892c376f9aa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 7996981134581347157}
+  rigidbodyFirstPersonController: {fileID: 7996981134581347159}
+  zoomIn: 20
+  zoomOut: 60
+  zoomOutSensitivity: 2
+  zoomInSensitivity: 0.5
 --- !u!1001 &8450957787795423519
 PrefabInstance:
   m_ObjectHideFlags: 0
