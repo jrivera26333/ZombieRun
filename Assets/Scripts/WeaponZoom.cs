@@ -22,19 +22,34 @@ public class WeaponZoom : MonoBehaviour
         {
             if(isToggled == false)
             {
-                isToggled = true;
-                playerCamera.fieldOfView = zoomIn;
-                rigidbodyFirstPersonController.mouseLook.XSensitivity = zoomInSensitivity;
-                rigidbodyFirstPersonController.mouseLook.YSensitivity = zoomInSensitivity;
+                ZoomIn();
             }
             else
             {
-                isToggled = false;
-                playerCamera.fieldOfView = zoomOut;
-                rigidbodyFirstPersonController.mouseLook.XSensitivity = zoomOutSensitivity;
-                rigidbodyFirstPersonController.mouseLook.YSensitivity = zoomOutSensitivity;
+                ZoomOut();
             }
 
         }
+    }
+
+    private void ZoomOut()
+    {
+        isToggled = false;
+        playerCamera.fieldOfView = zoomOut;
+        rigidbodyFirstPersonController.mouseLook.XSensitivity = zoomOutSensitivity;
+        rigidbodyFirstPersonController.mouseLook.YSensitivity = zoomOutSensitivity;
+    }
+
+    private void ZoomIn()
+    {
+        isToggled = true;
+        playerCamera.fieldOfView = zoomIn;
+        rigidbodyFirstPersonController.mouseLook.XSensitivity = zoomInSensitivity;
+        rigidbodyFirstPersonController.mouseLook.YSensitivity = zoomInSensitivity;
+    }
+
+    private void OnDisable()
+    {
+        ZoomOut();
     }
 }
