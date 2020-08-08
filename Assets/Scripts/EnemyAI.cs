@@ -13,21 +13,29 @@ public class EnemyAI : MonoBehaviour
     NavMeshAgent navMeshAgent;
     float distanceToTarget = Mathf.Infinity; //If we set to 0 this would be true right away so we put inifinity at start
     bool isProvoked = false;
+    EnemyHealth health;
 
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        health = GetComponent<EnemyHealth>();
     }
 
     void Update()
     {
+        if(health.IsDead())
+        {
+            this.enabled = false; //This turns off this enemy component
+            navMeshAgent.enabled = false;
+        }
+
         distanceToTarget = Vector3.Distance(target.position, transform.position);
 
-        if(isProvoked)
+        if(isProvoked) //We want to be able to manipulate this if we fire so we did this as a bool
         {
             EngageTarget();
         }
-        else if (distanceToTarget <= chaseRange) //This is checking or distance
+        else if (distanceToTarget <= chaseRange) //This is checking our distance
         {
             isProvoked = true;
         }
